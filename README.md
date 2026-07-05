@@ -2,8 +2,6 @@
 
 **A cash-out agent network for Stellar-settled remittances.**
 
-Part of [Baobab Labs](https://github.com/baobab-labs) — built on [Stellar](https://stellar.org).
-
 ---
 
 ## The problem
