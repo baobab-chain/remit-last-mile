@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RemitLastMile — Money that arrives as cash, not just a balance</title>
+<meta name="description" content="A cash-out agent network for Stellar-settled remittances. Send in seconds, collect as cash at any registered agent." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="brand">RemitLastMile</span>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#why-stellar">Why Stellar</a>
+      <a href="https://github.com/baobab-labs/remit-last-mile" class="cta-ghost">View on GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Baobab Labs · Stellar Wave</p>
+      <h1>Settled on Stellar.<br>Collected as cash.</h1>
+      <p class="lede">
+        A Stellar payment settles in seconds — but your relative still
+        needs Naira in hand. RemitLastMile connects that settled balance
+        to a network of real cash-out agents, so a code sent by text
+        becomes cash at a nearby kiosk.
+      </p>
+      <div class="hero-actions">
+        <a href="https://github.com/baobab-labs/remit-last-mile" class="cta-primary">Read the protocol</a>
+        <a href="#how" class="cta-text">See how a pickup works ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg id="voucher-diagram" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="20" width="300" height="180" rx="10" class="voucher-body"/>
+        <line x1="230" y1="20" x2="230" y2="200" class="voucher-perf"/>
+        <circle cx="230" cy="20" r="8" class="voucher-notch"/>
+        <circle cx="230" cy="200" r="8" class="voucher-notch"/>
+
+        <text x="44" y="55" class="voucher-label">CASH-OUT REQUEST</text>
+        <text x="44" y="85" class="voucher-amount">₦68,000</text>
+        <text x="44" y="112" class="voucher-code" id="voucher-code">••••••</text>
+
+        <text x="275" y="70" class="voucher-side-label">SCAN</text>
+        <rect x="252" y="90" width="46" height="46" rx="4" class="voucher-qr"/>
+
+        <g id="paid-stamp">
+          <rect x="60" y="140" width="120" height="34" rx="4" class="paid-stamp-box"/>
+          <text x="120" y="163" class="paid-stamp-text">REDEEMED</text>
+        </g>
+      </svg>
+      <p class="visual-caption">Code revealed to Agent #0412 · Yaba Market</p>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <div class="wrap">
+      <p class="eyebrow">The mechanism</p>
+      <h2>A code is the only thing that has to travel physically</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">01</span>
+          <div>
+            <h3>Sender creates a cash-out request</h3>
+            <p>Funds go into on-chain escrow, locked behind a hashed secret code — the plaintext never touches the chain yet.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <div>
+            <h3>Code shared with the recipient</h3>
+            <p>Sent by SMS, WhatsApp, or a phone call — however the sender already reaches their family.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <div>
+            <h3>Recipient visits any registered agent</h3>
+            <p>A market trader, a kiosk, anyone with cash on hand and a Stellar wallet.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">04</span>
+          <div>
+            <h3>Agent fronts cash, then claims on-chain</h3>
+            <p>The agent hands over cash, then submits the code to the contract to receive the escrowed funds themselves.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="why-stellar" class="section section-alt">
+    <div class="wrap two-col">
+      <div>
+        <p class="eyebrow">Why not just use an existing remittance app</p>
+        <h2>Because "arrived" should mean<br>cash in hand, not a balance</h2>
+        <p class="lede-small">
+          Most Stellar-based payment tools solve settlement and stop
+          there. RemitLastMile's contribution is the layer after that —
+          turning a settled balance into physical currency through a
+          permissionless agent network, not a licensed remittance
+          counter.
+        </p>
+      </div>
+      <div class="stat-list">
+        <div class="stat"><span class="stat-num">~5s</span><span class="stat-label">time for funds to reach escrow</span></div>
+        <div class="stat"><span class="stat-num">&lt;$0.01</span><span class="stat-label">typical transaction fee</span></div>
+        <div class="stat"><span class="stat-num">Any</span><span class="stat-label">USDC/XLM holder can become a cash-out agent</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap cta-band-inner">
+      <h2>Agent trust is unsolved.<br>That's exactly where we need help.</h2>
+      <a href="https://github.com/baobab-labs/remit-last-mile/blob/main/ISSUES.md" class="cta-primary cta-on-dark">See open issues</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Part of <a href="https://github.com/baobab-labs">Baobab Labs</a> — open-source, built on Stellar. MIT licensed.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
