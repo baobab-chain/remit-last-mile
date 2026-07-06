@@ -1,7 +1,3 @@
-# Initial issues (paste each of these as a separate GitHub issue)
-
----
-
 ## 1. Agent bonding/staking mechanism (top priority)
 
 **Labels:** `complexity: high`, `contract-logic`, `help wanted`, `priority: high`
